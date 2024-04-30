@@ -144,7 +144,7 @@ label {
     .h-caption i {
         display: block;
         font-size: 54px;
-        color: #0b9ff3;
+        color: #F2B33D;
         margin-bottom: 36px;
     }
 
@@ -164,7 +164,7 @@ div.hbox {
 }
 
 .jumbotron {
-    background-color: #E0E0E0;
+    background-color: #F2E9D8;
 }
 
 .page-header {
@@ -566,7 +566,7 @@ nav#filter {
 
 .da-dots span.da-dots-current:after {
     content: '';
-    background: green;
+    background: #04a0b7;
 }
 
 .team-member {
