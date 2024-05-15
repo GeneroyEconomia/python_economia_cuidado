@@ -6,16 +6,16 @@ Website: http://webthemez.com
 Note: Please do not remove the footer backlink (webthemez.com)--(if you want to remove contact: webthemez@gmail.com)
 Licence: Creative Commons Attribution 3.0** - http://creativecommons.org/licenses/by/3.0/
 */
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,500);
+@import url(http://fonts.googleapis.com/css?family=Nunito:400,700,500);
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito';
     font-weight: normal;
 }
 /*General*/
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito';
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
@@ -555,7 +555,7 @@ nav#filter {
 }
 
 .da-slide p {
-    text-align: justify;
+    text-align: center;
     top: 40%;
 }
 
@@ -681,3 +681,17 @@ background-size:initial;
     font-weight:400;
     }
 }
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #E6E5F1;
+  }
