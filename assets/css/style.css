@@ -258,7 +258,7 @@ img {
     }
 
         .footer1 a:hover {
-            color: #fff;
+            color: #DE7890;
         }
 
     .footer1 .panel {
@@ -314,7 +314,7 @@ img {
     }
 
         .footer2 a:hover {
-            color: #fff;
+            color: #DE7890;
         }
 
     .footer2 p {
@@ -695,3 +695,9 @@ table {
   tr:nth-child(even) {
     background-color: #E6E5F1;
   }
+
+hr {
+    height:2px;
+    width: 75% ;
+    background-color:#E7AF39
+}
