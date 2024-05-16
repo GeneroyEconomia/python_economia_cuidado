@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/scrollspy.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
 	<script src="assets/js/html5shiv.js"></script>
@@ -75,8 +77,8 @@
                     Familiarizar a los participantes con el entorno de desarrollo de Python e introducir los conceptos básicos del lenguaje como tipos de datos y la sintaxis básica. </p>
                 <h4><b>Contenidos:</b></h4>
                 <ol type="I">
-                    <li>Ambiente de desarrollo: Uso de Google Colab</li>
                     <li>Introducción al lenguaje de programación: Python (definición y ventajas de su uso)</li>
+                    <li>Ambiente de desarrollo: Uso de Google Colab</li>
                     <li>Importar e instalar paquetes</li>
                     <li>Tipos de datos</li>
                     <li>Sintaxis básica (condicionales, loops, y funciones)</li>
@@ -203,12 +205,13 @@
                     <p>Para clonar el repositorio del curso, primero debes crear un Colab Notebook en tu Google Drive. Para ello, sigue los siguientes pasos:</p>
                     <ol type="1">
                         <li>Ingresa a tu google Drive</li>
-                        <li>En la parte superior izquierda, haz clic en <b>Nuevo</b>, en el menú desplegable eliges <b>Más</b>, y en esta lista escoges la opción <b>Google Colaboratory</b> (como se muestra en la siguiente imagen).</li>
+                        <li>Si es la primera que vas a crear un Colab notebook ingresa a esta página: <a href="https://colab.research.google.com/notebooks/intro.ipynb">Colab</a>. Allí te diriges a la esquina superior izquierda y daz click en <b>Archivo</b> y en el menú desplegable das click en <b>Nuevo cuaderno</b>. Esta acción abrirá una nueva pestaña con un nuevo Colab notebook. Sigue con el <b>paso 4</b>. </li>
+                        <li>Si ya haz trabajado con algún notebbok de Colab sigue esta instrucción: en la parte superior izquierda, haz clic en <b>Nuevo</b>, en el menú desplegable eliges <b>Más</b>, y en esta lista escoges la opción <b>Google Colaboratory</b> (como se muestra en la siguiente imagen).</li>
                             <div style="text-align: center;">
                                 <img width="400" src="assets/images/drive_google_colab.png" >
                             </div>
                         <p></p>
-                        <li>En la parte superior derecha de Colab Notebook haz doble click en el nombre y cambíalo por <b></b>clonacion_repositorio</b>. </li>
+                        <li>En la parte superior derecha de Colab Notebook haz doble click en el nombre y cambíalo por <b>clonacion_repositorio</b>. </li>
                       </ol> 
                     <p></p>
                     <p></p>
@@ -216,24 +219,92 @@
                         <p class="admonition-w-title"><i class="fa fa-exclamation-triangle"></i>¡Atención!</p>
                         <ul>
                             <p></p>
-                            <li>Los textos que encuentra </li>
-                            <li>Inicia sesión en tu cuenta gmail y dirígete al google Drive, allí crea una carpeta con el siguiente nombre: <b>material_python_cuidado</b>. Si no sabes cómo hacer este proceso a continuación encontrarás el <a href="https://support.google.com/drive/answer/2375091?hl=es-419&co=GENIE.Platform%3DDesktop&oco=0#zippy=">paso a paso.</a></li>
+                            <li>Por favor, ten en cuenta que las secciones siguientes contienen fragmentos de código diseñados para ser copiados y pegados sin modificaciones en el notebook de Google Colab que hemos creado previamente.</li>
                           </ul>
                         <p></p> 
                     </div>
                     <h4><b>2. Conectar Google Drive en Google Colab:</b></h4>
-                    <p>Primero, montamos Google Drive para acceder a los archivos y carpetas desde Google Colab.</p>
-                    <pre><code>from google.colab import drive
-                        drive.mount('/content/drive')</code></pre>
-                    <ol type="1">
-                        <li>Ingresa a tu google Drive</li>
-                        <li>En la parte superior izquierda, haz clic en <b>Nuevo</b>, en el menú desplegable eliges <b>Más</b>, y en esta lista escoges la opción <b>Google Colaboratory</b> (como se muestra en la siguiente imagen).</li>
-                            <div style="text-align: center;">
-                                <img width="400" src="assets/images/" >
-                            </div>
+                    <p>Primero, montamos Google Drive para acceder a los archivos y carpetas desde Google Colab. El siguiente código se debe copiar y pegar en el notebook que hemos creado anteriormente.</p>
+                    <pre><code id="conecction_google_colab"><span class="keyword">from</span> google.colab <span class="keyword">import</span> drive <br>drive.mount(<span class="string">'/content/drive'</span>) </code>
+                    <button class="copy-btn" data-clipboard-target="#conecction_google_colab">
+                        <i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+                      </button></pre>
+                        <script>
+                        // Inicializar resaltado de sintaxis
+                        hljs.highlightAll();
+
+                        // Inicializar botón de copiado
+                        new ClipboardJS('.copy-btn');
+                        </script>
+
+                    <p>Luego de copiar este código, ejecútalo esto lo podrás hacer de diversas formas:</p>
+                    <ul>
+                        <li>Presionando <b>Ctrl + Enter</b> (Cmd + Enter en Mac) en tu teclado.</li>
+                        <li>Haciendo click en el botón de <b>play</b> <i class="fa fa-play-circle" aria-hidden="true"></i> que aparece a la izquierda en la celda de código.</li>
+                        <li>Presionando <b>Shift + Enter</b> para ejecutar la celda y moverte a la siguiente.</li>
+                    </ul>
+                    <p>Después de la ejecución se abrirá una ventana de autenticación. Sigue el enlace proporcionado, selecciona tu cuenta de Google con la que creaste la carpeta, y otorga los permisos necesarios.</p>
+                    <p>Si, el proceso anterio se llevó a cabo de forma correcta abajo de la celda de código aparecerá el siguiente resultado <b>Mounted at /content/drive</b>, de lo contrario comunícalo al tutor de la sesión.</p>
+                    <div class="note admonition">
+                        <p class="admonition-note-title"><i class="fa fa-comments-o" aria-hidden="true"></i>¿Qué permisos le concedes a el entorno de Google Colab en este proceso?</p>
+                        <ul>
+                            <p></p>
+                            <li><b>Acceso de lectura y escritura:</b> Colab puede leer y escribir archivos en tu Google Drive.</li>
+                            <li><b>Acceso a metadata:</b> Puede acceder a la información de metadatos de tus archivos en Google Drive, como nombres de archivo y ubicaciones.</li>
+                            <li><b>Gestión de archivos y carpetas:</b> Colab puede crear, eliminar y modificar archivos y carpetas en tu Google Drive según sea necesario para tus operaciones.</li>
+                          </ul>
+                        <p></p> 
+                    </div>
+                    <h4><b>3. Clonar el Repositorio desde GitHub:</b></h4>
+                    <p>Primero, instalaremos git con el siguiente código y ejecútalo:</p>
+                    <pre><code id="install_git"><span class="spcaracter">!</span>apt-get install -y git  </code>
+                    <button class="copy-btn" data-clipboard-target="#install_git">
+                        <i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+                      </button></pre>
+                        <script>
+                        // Inicializar resaltado de sintaxis
+                        hljs.highlightAll();
+
+                        // Inicializar botón de copiado
+                        new ClipboardJS('.copy-btn');
+                        </script>
+
+                    <p>Si el proceso anterior se realizó correctamente, verás el mensaje:</p>
+                    <p>Reading package lists... Done<br>Building dependency tree... Done<br>Reading state information... Done<br>git is already the newest version (1:2.34.1-1ubuntu1.10).</p>
+                    <p>Ahora cambiaremos el directorio de trabajo a la carpeta <b>'material_python_cuidado'</b> (que hemos creado anteriormente) en Google Drive. Con el siguiente código:</p>
+                    <pre><code id="cd"><span class="spcaracter">%cd</span> /content/drive/MyDrive/material_python_cuidado</code>
+                        <button class="copy-btn" data-clipboard-target="#cd">
+                            <i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+                          </button></pre>
+                            <script>
+                            // Inicializar resaltado de sintaxis
+                            hljs.highlightAll();
+    
+                            // Inicializar botón de copiado
+                            new ClipboardJS('.copy-btn');
+                            </script>
+                    <p>Después de la ejecución debajo de la celda aparecera el path que se indicó.</p>
+                    <p>Ahora se procederá a clonar el repositorio.</p>
+                    <div class="note admonition">
+                        <p class="admonition-note-title"><i class="fa fa-comments-o" aria-hidden="true"></i>¿Qué es clonar un repositorio?</p>
                         <p></p>
-                        <li>En la parte superior derecha de Colab Notebook haz doble click en el nombre y cambíalo por <b></b>clonacion_repositorio</b>. </li>
-                    </ol> 
+                        <p>Clonar un repositorio es el proceso de crear una copia local exacta de un repositorio de código que está alojado en una plataforma remota, como GitHub, GitLab, entre otros. Esto te permite tener una copia completa del proyecto en tu propio sistema, donde puedes trabajar con él, modificarlo, y probarlo sin afectar el repositorio original.</p>
+                        <p></p> 
+                    </div>
+                    <pre><code id="git_clone"><span class="spcaracter">!</span>git clone https://github.com/GeneroyEconomia/python_economia_cuidado.git/content/drive/MyDrive/material_python_cuidado</code>
+                        <button class="copy-btn" data-clipboard-target="#git_clone">
+                            <i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+                          </button></pre>
+                            <script>
+                            // Inicializar resaltado de sintaxis
+                            hljs.highlightAll();
+    
+                            // Inicializar botón de copiado
+                            new ClipboardJS('.copy-btn');
+                            </script>
+                        <p>Si el proceso anterior se realizó correctamente, verás el mensaje:</p>
+                        <p>Cloning into '/content/drive/MyDrive/...<br>remote: Enumerating objects:... done.<br>remote: Counting objects: 100% (...), done.<br>remote: Compressing objects: 100% (...), done.<br>remote: Total ... (..), reused ... (delta ..), pack-reused ...<br>Receiving objects: 100% (...), ... MiB | ... MiB/s, done.<br>Resolving deltas: 100% (...), done.</p>
+                        <p>Después de clonar el repositorio, verifica que los archivos se hayan guardado correctamente en tu Google Drive.</p>
             </div>  
             </div>
         </div>
