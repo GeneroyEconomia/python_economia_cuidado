@@ -44,10 +44,6 @@ Para explorar el contenido detallado del curso, te invitamos a visitar nuestra [
 Si deseas conocer más sobre el Proyecto Género y Economía, te invitamos a visitar nuestra [página oficial](https://generoyeconomia.org/).
 
 
-## Contribución
-Si deseas contribuir a este proyecto, por favor realiza un fork del repositorio y envía un pull request con tus sugerencias o mejoras. Todas las contribuciones son bienvenidas.
-
-
 ## Contacto
 Para preguntas o sugerencias, por favor contacta a [generoyeconomia@javeriana.edu.co](mailto:generoyeconomia@javeriana.edu.co) o a [generoyeconomiaj@gmail.com](mailto:generoyeconomiaj@gmail.com).
 
