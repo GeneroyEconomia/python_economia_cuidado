@@ -22,6 +22,10 @@ h1, .h1, h2, .h2, h3, .h3 {
     margin-top: 30px;
 }
 
+h4 {
+    color: #001733;
+    }
+
 blockquote {
     font-style: italic;
     font-family: Georgia;
@@ -32,6 +36,9 @@ blockquote {
 label {
     color: #777;
 }
+
+
+
 
 /* Header */
 #head {
@@ -330,7 +337,7 @@ img {
     }
 
 #services .fa {
-    color: #0b9ff3;
+    color: #8A88BF;
 }
 /* carousel */
 #quote-carousel {
@@ -441,9 +448,9 @@ nav#filter {
     nav#filter a {
         padding: 4px 12px;
         line-height: 20px;
-        border: 1px solid #00bfff;
+        border: 1px solid #8A88BF;
         text-decoration: none;
-        color: #00bfff;
+        color: #8A88BF;
     }
 
         nav#filter a.current {
@@ -701,3 +708,62 @@ hr {
     width: 75% ;
     background-color:#E7AF39
 }
+
+.tip {
+    border-left: 4px solid #DE7890; /* Cambia el color de la línea izquierda según tu preferencia */
+    padding: 8px; /* Ajusta el relleno según tu preferencia */
+    margin-bottom: 15px; /* Ajusta el margen inferior según tu preferencia */
+  }
+  
+  .admonition-title {
+    font-weight: bold; /* Cambia el estilo del título según tu preferencia */
+    margin-top: 0; /* Elimina el margen superior del título */
+    margin-bottom: 5px; /* Ajusta el margen inferior del título según tu preferencia */
+  }
+
+  .admonition .admonition-title {
+    position: relative;
+    margin: 0 -.6rem !important;
+    padding: .4rem .6rem .4rem 2rem;
+    font-weight: 700;
+    background-color: #F6DCE2;
+}
+
+.admonition-title i {
+    margin-right: 10px; /* Ajusta el margen derecho del icono según tu preferencia */
+  }
+
+
+pre {
+    padding: 10px;
+    background-color: #fafafa;
+    color: #222;
+    line-height: 1.2em;
+    border: 1px solid #c9c9c9;
+    margin: 1.5em 0;
+    box-shadow: 1px 1px 1px #d8d8d8;
+}
+
+.warning {
+    border-left: 4px solid #8A88BF; /* Cambia el color de la línea izquierda según tu preferencia */
+    padding: 8px; /* Ajusta el relleno según tu preferencia */
+    margin-bottom: 15px; /* Ajusta el margen inferior según tu preferencia */
+  }
+
+  .admonition-w-title {
+    font-weight: bold; /* Cambia el estilo del título según tu preferencia */
+    margin-top: 0; /* Elimina el margen superior del título */
+    margin-bottom: 5px; /* Ajusta el margen inferior del título según tu preferencia */
+  }
+
+  .admonition .admonition-w-title {
+    position: relative;
+    margin: 0 -.6rem !important;
+    padding: .4rem .6rem .4rem 2rem;
+    font-weight: 700;
+    background-color: #E6E5F1;
+}
+
+.admonition-w-title i {
+    margin-right: 10px; /* Ajusta el margen derecho del icono según tu preferencia */
+  }
