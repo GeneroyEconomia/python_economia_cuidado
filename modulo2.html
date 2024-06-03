@@ -13,6 +13,8 @@
 	<!-- Custom styles-->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="assets/js/html5shiv.js"></script>
@@ -81,6 +83,20 @@
                     <li>Personalización y parametrización de las visualizaciones.</li>
 					<li>Exportación de gráficos.</li>
                   </ol>  
+				  <p></p>
+				  <h4><b>Material para el desarrollo de la sesión:</b></h4>
+                    <p>A continuación, encontrarás los enlaces a los notebooks de Google Colab que utilizaremos en la Sesión 2. Uno está dedicado a <b>pandas</b>, donde exploraremos estructuras de datos y manipulaciones básicas, y el otro se centra en <b>matplotlib</b>, para la creación y personalización de gráficos. Estos recursos te permitirán seguir de cerca los ejemplos y prácticas durante la sesión.</p>
+					
+                    <div class="tip admonition">
+                        <p class="admonition-title"><i class="fa fa-lightbulb-o"></i>Links Colab Notebooks</p>
+                        <ul>
+                            <p></p>
+                            <li><b>Pandas</b>: Da click <a href="https://githubtocolab.com/GeneroyEconomia/python_economia_cuidado/blob/main/modulo_2/code/Pandas.ipynb"><b>aquí</b></a> para abrir el Colab Notebook de trabajo de esta librería.</li>
+                            <li><b>Matplotlib</b>: Haz clic <a href="https://githubtocolab.com/GeneroyEconomia/python_economia_cuidado/blob/main/modulo_2/code/Matplotlib.ipynb"><b>aquí</b></a> para abrir el Colab Notebook de trabajo correspondiente a la librería.</li>
+                          </ul>
+                        <p></p> 
+                    </div>
+				
 				  <hr> 
 				
 				<h4><b>¿Qué es una librería en Python?</b></h4>
@@ -94,8 +110,8 @@
                     <li>Abrir la terminal o el símbolo del sistema.</li>
                     <li>Ejecutar el comando de instalación:</li>
                   </ol>  
-				<pre><code id="git_clone"><span class="spcaracter"></span>pip install nombre_del_paquete</code>
-					<button class="copy-btn" data-clipboard-target="#git_clone">
+				<pre><code id="pip_install"><span class="spcaracter"></span>pip install nombre_del_paquete</code>
+					<button class="copy-btn" data-clipboard-target="#pip_install">
 						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
 					  </button></pre>
 						<script>
@@ -106,8 +122,8 @@
 						new ClipboardJS('.copy-btn');
 						</script>
 				<p>Por ejemplo, para instalar pandas, ejecutarías:</p>
-				<pre><code id="git_clone"><span class="spcaracter"></span>pip install pandas</code>
-					<button class="copy-btn" data-clipboard-target="#git_clone">
+				<pre><code id="pip_pandas"><span class="spcaracter"></span>pip install pandas</code>
+					<button class="copy-btn" data-clipboard-target="#pip_pandas">
 						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
 					  </button></pre>
 						<script>
@@ -120,8 +136,8 @@
 				<ol start="3">
                     <li>Verificar la instalación: Puedes verificar si el paquete se instaló correctamente intentando importarlo en un script de Python</li>
                   </ol> 	
-				  <pre><code id="git_clone"><span class="spcaracter">import</span> pandas <span class="spcaracter">as</span> pd  <br><span class="string">print</span>(pd.__version__)</code> 
-					<button class="copy-btn" data-clipboard-target="#git_clone">
+				  <pre><code id="verificar_pip"><span class="spcaracter">import</span> pandas <span class="spcaracter">as</span> pd  <br><span class="string">print</span>(pd.__version__)</code> 
+					<button class="copy-btn" data-clipboard-target="#verificar_pip">
 						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
 					  </button></pre>
 						<script>
@@ -141,8 +157,8 @@
 			    </div>
 				<p></p> 
 				<p>Para verificar si una librería está preinstalada en Google Colab:</p>
-				<pre><code id="git_clone"><span class="spcaracter">!</span>pip show nombre_del_paquete </code> 
-					<button class="copy-btn" data-clipboard-target="#git_clone">
+				<pre><code id="pip_colab"><span class="spcaracter">!</span>pip show nombre_del_paquete </code> 
+					<button class="copy-btn" data-clipboard-target="#pip_colab">
 						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
 					  </button></pre>
 						<script>
@@ -164,7 +180,8 @@
 						// Inicializar botón de copiado
 						new ClipboardJS('.copy-btn');
 						</script>
-				
+				<hr>
+
 				<h2>Facilis natus illum vitae doloremque</h2>
 				<p>In eleifend diam ipsum, a hendrerit sapien vehicula sed. Donec fermentum dolor in diam accumsan ultrices. Nullam interdum diam ut urna ullamcorper, ut vulputate mi tincidunt. Sed volutpat a nunc ut ultrices. Suspendisse tempor ornare nisi ac rhoncus. Quisque id tellus justo. In in quam sed lorem dignissim egestas. Vivamus est libero, tempus et pretium ac, ultricies ac augue. Quisque placerat vitae nisi eget facilisis. Quisque consectetur neque in ornare accumsan. Praesent at molestie nunc. Proin sollicitudin arcu posuere accumsan pretium. Maecenas tincidunt lorem arcu, vel semper justo congue et.</p>
 
