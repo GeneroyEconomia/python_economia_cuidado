@@ -182,7 +182,173 @@
 						</script>
 				<hr>
 
-				<h2>Facilis natus illum vitae doloremque</h2>
+				<h2><b>Pandas: herramienta esencial para el análisis de datos en Python</b></h2>
+				<p>Pandas es una biblioteca fundamental en Python, diseñada específicamente para la manipulación y el análisis de datos. Es utilizada ampliamente en la ciencia de datos, la ingeniería de datos y el análisis estadístico, gracias a su capacidad para manejar grandes volúmenes de datos de manera eficiente y su sintaxis intuitiva.</p>
+				<div class="warning admonition">
+					<p class="admonition-w-title"><i class="fa fa-file-text"></i>Documentación de la librería</p>
+					<ul>
+						<p></p>
+						<p>Para aprovechar al máximo las capacidades de pandas en el análisis y manipulación de datos, te recomendamos consultar la <a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html"><b>documentación oficial de pandas</b></a>.<br>
+						La documentación es un recurso invaluable que proporciona una guía completa sobre todas las funciones y características de pandas. Desde tutoriales básicos hasta ejemplos avanzados, la documentación te ayudará a comprender cómo utilizar pandas de manera efectiva para tus proyectos. Es una herramienta esencial para resolver dudas, aprender nuevas técnicas y profundizar en las capacidades de esta poderosa biblioteca.</p>
+					</ul>
+					<p></p> 
+				</div>
+
+				<h4><b>Características principales:</b></h4>
+				<ul>
+					<li>Ofrece estructuras de datos flexibles y eficientes para el manejo de datos tabulares y series temporales.</li>
+					<li>Proporciona herramientas para la limpieza, transformación y análisis de datos.</li>
+					<li>Permite la importación y exportación de datos en diversos formatos, como CSV, Excel, SQL y HDF5.</li>
+					<li>Integra funcionalidades avanzadas para el filtrado, la agregación y la visualización de datos.</li>
+					<li>Es compatible con la integración de datos de múltiples fuentes y la creación de análisis complejos.</li>
+				</ul>
+
+				<h4><b>Empezar a usar Pandas</b></h4>
+				<p>Para empezar a usar pandas, primero debes importar el paquete. La comunidad generalmente utiliza el alias pd para pandas, por lo que es una práctica común en toda la documentación de pandas cargar el paquete con este alias.</p>
+				<pre><code id="imp_pandas"><span class="spcaracter">import</span> pandas <span class="spcaracter">as</span> pd</code> 
+					<button class="copy-btn" data-clipboard-target="#imp_pandas">
+						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					  </button></pre>
+						<script>
+						// Inicializar resaltado de sintaxis
+						hljs.highlightAll();
+
+						// Inicializar botón de copiado
+						new ClipboardJS('.copy-btn');
+						</script>
+				
+				<h4><b>I. Estructuras de datos flexibles</b></h4>
+				  <ul>
+					<li><b>Series:</b> Una serie es un objeto unidimensional que contiene una secuencia de valores y una secuencia de etiquetas asociadas a cada valor. Puedes pensar en una serie como una columna de una tabla de datos.</li>
+						<ul>
+							<li>Creación de una serie: <code>pd.Series(data, index)</code></li>
+							<li>Acceso a elementos: <code>serie[index]</code></li>
+							<li>Operaciones matemáticas: <code>serie + serie</code></li>
+						</ul>
+					<li><b>DataFrames:</b> Un DataFrame es una estructura de datos bidimensional que contiene una colección ordenada de columnas, cada una de las cuales puede ser de un tipo diferente. Puedes pensar en un DataFrame como una tabla de datos.</li>
+						<ul>
+							<li>Creación de un DataFrame: <code>pd.DataFrame(data, columns)</code></li>
+							<li>Acceso a columnas: <code>df['columna']</code></li>
+							<li>Operaciones de filtrado: <code>df[df['columna'] > valor]</code></li>
+						</ul>
+				</ul>
+				<p><b>&emsp;&emsp;Ejemplo:</b></p>
+				<p>A continuación, se presentan ejemplos prácticos de cómo crear objetos Series en pandas y combinarlos en un DataFrame.</p>
+				<p>La imagen que se presenta a continuación, ilustra cómo combinar tres Series de Pandas en un solo DataFrame. En la primera serie ("Series 1"), cada persona está asociada con su edad; en la segunda serie ("Series 2"), con su ciudad; y en la tercera serie ("Series 3"), con su puntaje. Al combinar estas tres series por su índice común, se crea un DataFrame completo que incluye la edad, ciudad y puntaje de cada persona. Esta visualización demuestra cómo las series individuales se pueden consolidar en un DataFrame para facilitar el análisis de datos en Pandas.</p>
+				<div style="text-align: center;">
+					<img  src="assets/images/Series.png" >
+				</div>
+				<p>Puedes copiar las siguientes líneas de código y probarlo en un Colab Notebook (o en un Jupyter Notebook, si estás trabajando en un entorno local) para ver los resultados. Al ejecutar el código, obtendrás las Series individuales y el DataFrame final, que se verá como en la figura mostrada anteriormente, con las Series de edades, ciudades y puntajes combinadas en una estructura tabular.</p>
+				<p><b><I>&emsp; 1. Series de números enteros:</I></b></p>
+				<pre><code id="ejemplo_serie_pd"><span class="comment"># Crear un objeto "Series" de números enteros</span><br>serie_edades = pd.Series<span class="cuadrados_c">(</span><span class="corchetes">[</span><span class="number">23</span>, <span class="number">35</span>, <span class="number">22</span>, <span class="number">28</span><span class="corchetes">]</span></span>, index = <span class="corchetes">[</span><span class="string">'Ana'</span>, <span class="string">'Juan'</span>, <span class="string">'Pedro'</span>, <span class="string">'María'</span><span class="corchetes">]</span><span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>serie_edades<span class="cuadrados_c">)</span></code> 
+					<button class="copy-btn" data-clipboard-target="#ejemplo_serie_pd">
+						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					  </button></pre>
+						<script>
+						// Inicializar resaltado de sintaxis
+						hljs.highlightAll();
+
+						// Inicializar botón de copiado
+						new ClipboardJS('.copy-btn');
+						</script>
+				<p><b><I>&emsp; 2. Series de cadenas de texto:</I></b></p>
+				<pre><code id="ejemplo_serie2_pd"><span class="comment"># Crear un objeto "Series" de cadenas de texto</span><br>serie_ciudades = pd.Series<span class="cuadrados_c">(</span><span class="corchetes">[</span><span class="string">'Bogotá'</span>, <span class="string">'Cali'</span>, <span class="string">'Medellín'</span>, <span class="string">'Tunja'</span><span class="corchetes">]</span></span>, index = <span class="corchetes">[</span><span class="string">'Ana'</span>, <span class="string">'Juan'</span>, <span class="string">'Pedro'</span>, <span class="string">'María'</span><span class="corchetes">]</span><span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>serie_ciudades<span class="cuadrados_c">)</span></code> 
+					<button class="copy-btn" data-clipboard-target="#ejemplo_serie2_pd">
+						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					  </button></pre>
+						<script>
+						// Inicializar resaltado de sintaxis
+						hljs.highlightAll();
+
+						// Inicializar botón de copiado
+						new ClipboardJS('.copy-btn');
+						</script>
+				<p><b><I>&emsp; 3. Series de números decimales:</I></b></p>
+				<pre><code id="ejemplo_serie3_pd"><span class="comment"># Crear un objeto "Series" de números flotantes</span><br>serie_puntajes = pd.Series<span class="cuadrados_c">(</span><span class="corchetes">[</span><span class="number">85.5</span>, <span class="number">92.3</span>, <span class="number">76.8</span>, <span class="number">88.1</span><span class="corchetes">]</span></span>, index = <span class="corchetes">[</span><span class="string">'Ana'</span>, <span class="string">'Juan'</span>, <span class="string">'Pedro'</span>, <span class="string">'María'</span><span class="corchetes">]</span><span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>serie_puntajes<span class="cuadrados_c">)</span></code> 
+					<button class="copy-btn" data-clipboard-target="#ejemplo_serie3_pd">
+					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						 </button></pre>
+							<script>
+							// Inicializar resaltado de sintaxis
+								hljs.highlightAll();
+				
+							// Inicializar botón de copiado
+								new ClipboardJS('.copy-btn');
+							</script>
+				<p><b><I>&emsp; Combinación de Series en un DataFrame</I></b></p>
+				<p>A continuación, combinamos las Series anteriores para crear un DataFrame:</p>
+				<pre><code id="ejemplo_df_pd"><span class="comment"># Crear un DataFrame a partir de "Series"</span><br>data = <span class="cuadrados_c">{</span><span class="string">'Edad'</span>: serie_edades, <span class="string">'Ciudad'</span>: serie_ciudades, <span class="string">'Puntaje'</span>: serie_puntajes<span class="cuadrados_c">}</span><br>df = pd.DataFrame<span class="cuadrados_c">(</span>data<span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>df<span class="cuadrados_c">)</span></code> 
+					<button class="copy-btn" data-clipboard-target="#ejemplo_df_pd">
+					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						</button></pre>
+							<script>
+							// Inicializar resaltado de sintaxis
+								hljs.highlightAll();
+
+							// Inicializar botón de copiado
+								new ClipboardJS('.copy-btn');
+							</script>
+				<h4><b>II. Manipulación y Transformación de Datos</b></h4>
+				<ul>
+				<li><b>Filtrado y Selección:</b> Métodos intuitivos para seleccionar y filtrar datos usando condiciones, etiquetas y posiciones.</li>
+					<ul>
+						<li>Filtrado por condición: <code>df[df['columna'] > valor]</code></li>
+						<li>Selección por etiqueta: <code>df.loc['etiqueta']</code></li>
+						<li>Selección por posición: <code>df.iloc[posición]</code></li>
+					</ul>
+				<li><b>Agrupamiento:</b> Operaciones de agrupación <b>(groupby)</b> que facilitan el resumen y la agregación de datos.</li>
+					<ul>
+						<li>Agrupar por columna: <code>df.groupby('columna')</code></li>
+						<li>Aplicar funciones de agregación: <code>df.groupby('columna').agg(función)</code></li>
+					</ul>
+				<li><b>Transformaciones:</b> Funciones de aplicación <b>(apply)</b>, mapear <b>(map)</b>, y funciones vectorizadas que permiten transformaciones eficientes.</li>
+					<ul>
+						<li>Aplicar función a columnas: <code>df['columna'].apply(función)</code></li>
+						<li>Aplicar función a elementos: <code>df.applymap(función)</code></li>
+					</ul>
+				</ul>
+				<p><b>&emsp;&emsp;Ejemplo:</b></p>
+				<p>A partir del DataFrame anterior <b>df</b>, realizaremos varias operaciones de manipulación y transformación de datos. Estas operaciones incluyen filtrado y selección, agrupamiento, y transformaciones, que aplican funciones a los datos para realizar cambios eficientes. Estas técnicas son esenciales para el análisis y manejo efectivo de datos en Pandas.</p>
+				<p><b><I>&emsp;  1. Filtrado y Selección:</I></b></p>
+				<ul>
+					<li>Filtrar las personas con un puntaje mayor a 80.</li>		
+				</ul>
+				<pre><code id="ejemplo_fil_80"><span class="comment"># Personas con puntaje mayor a 80</span><br>filtro_puntaje = df<span class="cuadrados_c">[</span>df<span class="corchetes">[</span><span class="string">'Puntaje'</span></span><span class="corchetes">]</span> > </span><span class="number">80</span></span><span class="cuadrados_c">]</span><br><span class="print">print</span><span class="cuadrados_c">(</span>filtro_puntaje<span class="cuadrados_c">)</span></code> 
+					<button class="copy-btn" data-clipboard-target="#ejemplo_fil_80">
+					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						</button></pre>
+							<script>
+							// Inicializar resaltado de sintaxis
+								hljs.highlightAll();
+
+							// Inicializar botón de copiado
+								new ClipboardJS('.copy-btn');
+							</script>
+
+				<ul>
+					<li>Seleccionar la información de Juan.</li>
+				</ul>
+				<pre><code id="ejemplo_df_pd"><span class="comment"># Seleccionar la información de Juan usando iloc</span><br>juan_info = df.iloc<span class="cuadrados_c">[</span>1<span class="cuadrados_c">]</span><br>df = pd.DataFrame<span class="cuadrados_c">(</span>data<span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>df<span class="cuadrados_c">)</span></code> 
+					<button class="copy-btn" data-clipboard-target="#ejemplo_df_pd">
+					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						</button></pre>
+							<script>
+							// Inicializar resaltado de sintaxis
+								hljs.highlightAll();
+
+							// Inicializar botón de copiado
+								new ClipboardJS('.copy-btn');
+							</script>
+
+
+
+
+
+				<blockquote>Venenatis, arcu et ornare pharetra, quam ante accumsan libero, ac condimentum felis velit quis lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sit amet urna est. Proin vulputate laoreet turpis ut pulvinar.</blockquote>
+				<p>Odit, laudantium, dolores, natus distinctio labore voluptates in inventore quasi qui nobis quis adipisci fugit id! Aliquam alias ea modi. Porro, odio, sed veniam hic numquam qui ad molestiae sint placeat expedita? Perferendis, enim qui numquam sequi obcaecati molestiae fugiat!</p>
+				<p>Dignissimos, beatae, praesentium illum eos autem perspiciatis? Minus, non, tempore, illo, mollitia exercitationem tempora quas harum odio dolores delectus quidem laudantium adipisci ducimus ullam placeat eaque minima quae iure itaque corporis magni nesciunt eius sed dolor doloremque id quasi nisi.</p>
+				
+				<h2>Librería Matplotlib</h2>
 				<p>In eleifend diam ipsum, a hendrerit sapien vehicula sed. Donec fermentum dolor in diam accumsan ultrices. Nullam interdum diam ut urna ullamcorper, ut vulputate mi tincidunt. Sed volutpat a nunc ut ultrices. Suspendisse tempor ornare nisi ac rhoncus. Quisque id tellus justo. In in quam sed lorem dignissim egestas. Vivamus est libero, tempus et pretium ac, ultricies ac augue. Quisque placerat vitae nisi eget facilisis. Quisque consectetur neque in ornare accumsan. Praesent at molestie nunc. Proin sollicitudin arcu posuere accumsan pretium. Maecenas tincidunt lorem arcu, vel semper justo congue et.</p>
 
 				<p>Aliquam sollicitudin in nulla ut sagittis. Fusce feugiat, sapien eget rutrum ullamcorper, lectus dui dapibus felis, blandit sagittis libero mi eu velit. Cras venenatis, arcu et ornare pharetra, quam ante accumsan libero, ac condimentum felis velit quis lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sit amet urna est. Proin vulputate laoreet turpis ut pulvinar. Ut sollicitudin sem dui, vel elementum velit venenatis a. Fusce scelerisque tortor in augue consectetur lacinia. In at mattis mi.</p>
@@ -190,28 +356,68 @@
 				<blockquote>Venenatis, arcu et ornare pharetra, quam ante accumsan libero, ac condimentum felis velit quis lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sit amet urna est. Proin vulputate laoreet turpis ut pulvinar.</blockquote>
 				<p>Odit, laudantium, dolores, natus distinctio labore voluptates in inventore quasi qui nobis quis adipisci fugit id! Aliquam alias ea modi. Porro, odio, sed veniam hic numquam qui ad molestiae sint placeat expedita? Perferendis, enim qui numquam sequi obcaecati molestiae fugiat!</p>
 				<p>Dignissimos, beatae, praesentium illum eos autem perspiciatis? Minus, non, tempore, illo, mollitia exercitationem tempora quas harum odio dolores delectus quidem laudantium adipisci ducimus ullam placeat eaque minima quae iure itaque corporis magni nesciunt eius sed dolor doloremque id quasi nisi.</p>
+			
+			
+			
 			</article>
 			<!-- /Article -->
 
 			<!-- Sidebar -->
 			<aside class="col-md-4 sidebar sidebar-right">
-
 				<div class="row panel">
 					<div class="col-xs-12">
 						<h4><b>Sesión 2: Martes 18 de junio de 2024</b></h4>
 						<hr>
 						<h5><b> Material complementario </b></h5>
 						<p>Aquí se incluyen recursos adicionales, ejemplos prácticos y ejercicios que le ayudarán a consolidar los conceptos básicos y a adquirir una comprensión más profunda de las librerías de Python diseñadas para el análisis y visualización de datos.</p>
-					</div>
-				</div>
-				<div class="row panel">
-					<div class="col-xs-12">
-						<h3>Lorem ipsum dolor sit</h3>
+						<hr>
+						<h5><b>Librería Pandas</b></h5>
 						<p>
-							<img src="assets/images/1.jpg" alt=""></p>
-						<p>Morbi vitae diam felis. Mauris vulputate nisi erat, adipiscing pretium lacus lacinia quis. Sed consectetur ipsum.</p>
+							<img src="assets/images/pandas.png" alt=""></p>
+							<ul class="list-unstyled list-spaces">
+								<li><a href="https://pandas.pydata.org/docs/getting_started/index.html">Documentación oficial de Pandas</a><br>
+									<span class="small text-muted">Explora la documentación oficial de Pandas para obtener información detallada sobre las funciones y características de la librería.</span></li>
+								<li><a href="">Guía rápida de pandas o Cheat sheet (Español)</a><br>
+									<span class="small text-muted">Para profundizar en el uso de pandas y tener una referencia rápida de sus funciones y características.</span></li>
+								<li><a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">Guía rápida de pandas o Cheat sheet (Inglés)</a><br>
+									<span class="small text-muted">Para profundizar en el uso de pandas y tener una referencia rápida de sus funciones y características.</span></li>
+								<li><a href="https://youtu.be/HyU9t2QD_tw">Visualización de la estructura de un DataFrame</a><br>
+									<span class="small text-muted">Video tutorial: introducción a Pandas en Jupyter Notebook.</span></li>
+								<li><a href="https://youtu.be/JD-Xznh58cE">Selección y manejo de columnas en Pandas</a><br>
+									<span class="small text-muted">Video tutorial: explora las diferentes opciones que hay para la selección y manejo de columnas de un DataFrame.</span></li>
+								<li><a href="https://youtu.be/p0OCdjMLgjY?si=4tZo7WvP1rx4gJEv">Selección y manejo de filas en Pandas</a><br>
+									<span class="small text-muted">Video tutorial: explora las diferentes opciones que hay para la selección y manejo de filas de un DataFrame.</span></li>
+								<li><a href="https://youtu.be/DxG0pqJ5VHo?si=BHFWFfy-YRyJFhCN">Propiedades loc, iloc, at e iat.</a><br>
+									<span class="small text-muted">Video tutorial: aborda la obtención de subconjuntos de un DataFrame a partir de las propiedades loc, iloc, at e iat. </span></li>
+									<li><a href="https://www.w3schools.com/python/pandas/default.asp">Tutorial interactivo de Pandas</a><br>
+										<span class="small text-muted">Se encuentra una introducción básica a la librería, limpieza de datos y gráficas. Este tutorial se encuentra en inglés; sin embargo, añadiendo a tu explorador la siguiente extensión podrás acceder al contenido en español: <a href='https://chromewebstore.google.com/detail/traductor-de-google/aapbdbdomjkkjkaonfhkkikfgjllcleb'> traductor de Google</a>.</span></li>
+								</ul>
+							<hr>
+						<h5><b>Librería Matplotlib</b></h5>
+								<p>
+									<img src="assets/images/matplolib.png" alt=""></p>
+									<ul class="list-unstyled list-spaces">
+										<li><a href="https://pandas.pydata.org/docs/getting_started/index.html">Documentación oficial de Matplotlib</a><br>
+											<span class="small text-muted">Explora la documentación oficial de Pandas para obtener información detallada sobre las funciones y características de la librería.</span></li>
+										<li><a href="">Guía rápida de pandas o Cheat sheet (Español)</a><br>
+											<span class="small text-muted">Para profundizar en el uso de pandas y tener una referencia rápida de sus funciones y características.</span></li>
+										<li><a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">Guía rápida de pandas o Cheat sheet (Inglés)</a><br>
+											<span class="small text-muted">Para profundizar en el uso de pandas y tener una referencia rápida de sus funciones y características.</span></li>
+										<li><a href="https://youtu.be/HyU9t2QD_tw">Visualización de la estructura de un DataFrame</a><br>
+											<span class="small text-muted">Video tutorial: introducción a Pandas en Jupyter Notebook.</span></li>
+										<li><a href="https://youtu.be/JD-Xznh58cE">Selección y manejo de columnas en Pandas</a><br>
+											<span class="small text-muted">Video tutorial: explora las diferentes opciones que hay para la selección y manejo de columnas de un DataFrame.</span></li>
+										<li><a href="https://youtu.be/p0OCdjMLgjY?si=4tZo7WvP1rx4gJEv">Selección y manejo de filas en Pandas</a><br>
+											<span class="small text-muted">Video tutorial: explora las diferentes opciones que hay para la selección y manejo de filas de un DataFrame.</span></li>
+										<li><a href="https://youtu.be/DxG0pqJ5VHo?si=BHFWFfy-YRyJFhCN">Propiedades loc, iloc, at e iat.</a><br>
+											<span class="small text-muted">Video tutorial: aborda la obtención de subconjuntos de un DataFrame a partir de las propiedades loc, iloc, at e iat. </span></li>
+											<li><a href="https://www.w3schools.com/python/pandas/default.asp">Tutorial interactivo de Pandas</a><br>
+												<span class="small text-muted">Se encuentra una introducción básica a la librería, limpieza de datos y gráficas. Este tutorial se encuentra en inglés, pero con las siguientes extensiones podrás acceder al contenido en español:  google transalte </span></li>
+										</ul>
+		
 					</div>
 				</div>
+
 
 			</aside>
 			<!-- /Sidebar -->

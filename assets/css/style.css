@@ -816,19 +816,28 @@ pre {
     text-align: left;
   }
 .string {
-    color: #f3a683; /* Resalta cadenas */
+    color: #D99982; /* Resalta cadenas */
   }
 .number {
-    color: #05c46b; /* Resalta números */
+    color: #83e8c3; /* Resalta números */
   }
 .comment {
-    color: #576574; /* Resalta comentarios */
+    color: #6CA651; /* Resalta comentarios */
   }
 
 .spcaracter {
     color: #8bbee9; /* Resalta caracter especial como ! o %cd */
 }
+.corchetes {
+    color: #CE70B3; /* Resalta corchetes */
+}
 
+.cuadrados_c{
+    color: #FFD700; /* Resalta corchetes cuadrados */
+}
+.print{
+    color: #f3e490; 
+}
   .note {
     border-left: 4px solid #75BFB8; /* Cambia el color de la línea izquierda según tu preferencia */
     padding: 8px; /* Ajusta el relleno según tu preferencia */
