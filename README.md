@@ -27,13 +27,13 @@ El repositorio está organizado en tres carpetas principales, una para cada mód
 <div align="justify">
   <pre>
     ├── modulo_1
-    │   ├── 🖥️ codes
+    │   ├── 🖥️ code
     │   └── 📚 material
     ├── modulo_2
-    │   ├── 🖥️ codes
+    │   ├── 🖥️ code
     │   └── 📚 material
     └── modulo_3
-        ├── 🖥️ codes
+        ├── 🖥️ code
         └── 📚 material
   </pre>
 </div>
