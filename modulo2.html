@@ -182,8 +182,8 @@
 						</script>
 				<hr>
 
-				<h2><b>Pandas: herramienta esencial para el análisis de datos en Python</b></h2>
-				<p>Pandas es una biblioteca fundamental en Python, diseñada específicamente para la manipulación y el análisis de datos. Es utilizada ampliamente en la ciencia de datos, la ingeniería de datos y el análisis estadístico, gracias a su capacidad para manejar grandes volúmenes de datos de manera eficiente y su sintaxis intuitiva.</p>
+				<h2><b>pandas: herramienta esencial para el análisis de datos en Python</b></h2>
+				<p>pandas es una biblioteca fundamental en Python, diseñada específicamente para la manipulación y el análisis de datos. Es utilizada ampliamente en la ciencia de datos, la ingeniería de datos y el análisis estadístico, gracias a su capacidad para manejar grandes volúmenes de datos de manera eficiente y su sintaxis intuitiva.</p>
 				<div class="warning admonition">
 					<p class="admonition-w-title"><i class="fa fa-file-text"></i>Documentación de la librería</p>
 					<ul>
@@ -203,7 +203,7 @@
 					<li>Es compatible con la integración de datos de múltiples fuentes y la creación de análisis complejos.</li>
 				</ul>
 
-				<h4><b>Empezar a usar Pandas</b></h4>
+				<h4><b>Empezar a usar pandas</b></h4>
 				<p>Para empezar a usar pandas, primero debes importar el paquete. La comunidad generalmente utiliza el alias pd para pandas, por lo que es una práctica común en toda la documentación de pandas cargar el paquete con este alias.</p>
 				<pre><code id="imp_pandas"><span class="spcaracter">import</span> pandas <span class="spcaracter">as</span> pd</code> 
 					<button class="copy-btn" data-clipboard-target="#imp_pandas">
@@ -328,8 +328,36 @@
 				<ul>
 					<li>Seleccionar la información de Juan.</li>
 				</ul>
-				<pre><code id="ejemplo_df_pd"><span class="comment"># Seleccionar la información de Juan usando iloc</span><br>juan_info = df.iloc<span class="cuadrados_c">[</span>1<span class="cuadrados_c">]</span><br>df = pd.DataFrame<span class="cuadrados_c">(</span>data<span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>df<span class="cuadrados_c">)</span></code> 
-					<button class="copy-btn" data-clipboard-target="#ejemplo_df_pd">
+				<p>&emsp;&emsp;<b>iloc:</b> es útil cuando se trabaja con posiciones y índices numéricos.</p>
+				<pre><code id="ejemplo_df_iloc"><span class="comment"># Seleccionar la información de Juan usando iloc</span><br>juan_info_iloc = df.iloc<span class="cuadrados_c">[</span>1<span class="cuadrados_c">]</span><br><span class="print">print</span><span class="cuadrados_c">(</span>juan_info_iloc <span class="cuadrados_c">)</span></code> 
+					<button class="copy-btn" data-clipboard-target="#ejemplo_df_iloc">
+					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						</button></pre>
+							<script>
+							// Inicializar resaltado de sintaxis
+								hljs.highlightAll();
+
+							// Inicializar botón de copiado
+								new ClipboardJS('.copy-btn');
+							</script>
+				<p>&emsp;&emsp;<b>loc:</b> es más intuitivo cuando se trabaja con etiquetas y nombres.</p>
+				<pre><code id="ejemplo_df_loc"><span class="comment"># Seleccionar la información de Juan usando loc</span><br>juan_info_loc = df.loc<span class="cuadrados_c">[</span><span class="string">'Juan'</span><span class="cuadrados_c">]</span><br><span class="print">print</span><span class="cuadrados_c">(</span>juan_info_loc<span class="cuadrados_c">)</span></code> 
+					<button class="copy-btn" data-clipboard-target="#ejemplo_df_loc">
+					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						</button></pre>
+							<script>
+							// Inicializar resaltado de sintaxis
+								hljs.highlightAll();
+
+							// Inicializar botón de copiado
+								new ClipboardJS('.copy-btn');
+							</script>
+				<p><b><I>&emsp;  2. Agrupamiento:</I></b></p>
+				<ul>
+					<li>Agrupar los datos por la columna "Ciudad" y calcula el puntaje promedio para cada ciudad.</li>		
+				</ul>
+				<pre><code id="ejemplo_agr_pd"><span class="comment"># Puntaje promedio por ciudad</span><br>agrupamiento_ciudad = df.groupby<span class="cuadrados_c">(</span><span class="string">'Ciudad'</span><span class="cuadrados_c">)</span><span class="corchetes">[</span><span class="string">'Puntaje'</span></span><span class="corchetes">]</span>.mean<span class="cuadrados_c">()</span><br><span class="print">print</span><span class="cuadrados_c">(</span>agrupamiento_ciudad<span class="cuadrados_c">)</span></code> 
+					<button class="copy-btn" data-clipboard-target="#ejemplo_agr_pd">
 					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
 						</button></pre>
 							<script>
@@ -340,24 +368,128 @@
 								new ClipboardJS('.copy-btn');
 							</script>
 
+				<p><b><I>&emsp;  3. Transformaciones:</I></b></p>
+				<ul>
+					<li>Crear una nueva columna "Puntaje_Ajustado" que incrementa cada puntaje en 5 puntos.</li>		
+				</ul>
+				<pre><code id="ejemplo_trans_1"><span class="comment"># Nueva columna 'Puntaje_Ajustado' con incremento de 5 puntos</span><br>df<span class="cuadrados_c">[</span><span class="string">'Puntaje_Ajustado'</span><span class="cuadrados_c">]</span> = df<span class="cuadrados_c">[</span><span class="string">'Puntaje'</span></span><span class="corchetes">]</span>.apply<span class="cuadrados_c">(</span><span class="spcaracter">lambda</span> x: x + <span class="number">5</span><span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>df<span class="cuadrados_c">)</span></code> 
+					<button class="copy-btn" data-clipboard-target="#ejemplo_trans_1">
+					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						</button></pre>
+							<script>
+							// Inicializar resaltado de sintaxis
+								hljs.highlightAll();
 
+							// Inicializar botón de copiado
+								new ClipboardJS('.copy-btn');
+							</script>
 
+				<h4><b>III. Manejo de Datos Faltantes</b></h4>
+				<ul>
+					<li><b>Identificación:</b> Métodos para detectar y manejar valores nulos o faltantes en los datos.</li>
+						<ul>
+							<li>Identificar valores nulos: <code>df.isnull()</code></li>
+							<li>Eliminar filas con valores nulos: <code>df.dropna()</code></li>
+							<li>Reemplazar valores nulos: <code>df.fillna(valor)</code></li>
+						</ul>
+				</ul>
 
+				<h4><b>IV. Entrada y Salida de Datos (I/O)</b></h4>
+				<ul>
+					<li><b>Importación:</b> Métodos para cargar datos desde archivos locales o remotos en diferentes formatos.</li>
+						<ul>
+							<li>Desde CSV: <code>pd.read_csv('archivo.csv')</code></li>
+							<li>Desde Excel: <code>pd.read_excel('archivo.xlsx')</code></li>
+							<li>Desde Stata: <code>pd.read_stata('archivo.dta')</code></li></li>
+							<li>Desde SQL: <code>pd.read_sql('SELECT * FROM tabla', conexión)</code></li>
+						</ul>
+					<li><b>Exportación:</b> Métodos para guardar datos en archivos locales o remotos en diferentes formatos.</li>
+						<ul>
+							<li>Exportar a CSV: <code>df.to_csv('archivo.csv')</code></li>
+							<li>Exportar a Excel: <code>df.to_excel('archivo.xlsx')</code></li>
+							<li>Exportar a Stata: <code>df.to_stata('archivo.dta')</code></li>
+							<li>Exportar a SQL: <code>df.to_sql('tabla', conexión)</code></li>
+						</ul>
+				</ul>
 
-				<blockquote>Venenatis, arcu et ornare pharetra, quam ante accumsan libero, ac condimentum felis velit quis lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sit amet urna est. Proin vulputate laoreet turpis ut pulvinar.</blockquote>
-				<p>Odit, laudantium, dolores, natus distinctio labore voluptates in inventore quasi qui nobis quis adipisci fugit id! Aliquam alias ea modi. Porro, odio, sed veniam hic numquam qui ad molestiae sint placeat expedita? Perferendis, enim qui numquam sequi obcaecati molestiae fugiat!</p>
-				<p>Dignissimos, beatae, praesentium illum eos autem perspiciatis? Minus, non, tempore, illo, mollitia exercitationem tempora quas harum odio dolores delectus quidem laudantium adipisci ducimus ullam placeat eaque minima quae iure itaque corporis magni nesciunt eius sed dolor doloremque id quasi nisi.</p>
+				<h4><b>V. Visualización de Datos</b></h4>
+				<ul>
+					<li><b>Gráficos:</b> Funciones para crear visualizaciones de datos atractivas y efectivas.</li>
+						<ul>
+							<li>Gráfico de barras: <code>df.plot.bar()</code></li>
+							<li>Gráfico de líneas: <code>df.plot.line()</code></li>
+							<li>Gráfico de dispersión: <code>df.plot.scatter()</code></li>
+							<li>Gráfico de cajas: <code>df.plot.box()</code></li>
+						</ul>
+					</ul>
+				<p>Estas son solo algunas de las muchas funcionalidades que ofrece Pandas para el análisis y manipulación de datos. La documentación oficial de Pandas es un recurso invaluable que te permitirá explorar todas las funciones y características de la librería, así como aprender nuevas técnicas y aplicaciones para tus proyectos de análisis de datos.</p>
+				<p>Para profundizar en el uso de Pandas y adquirir una comprensión más profunda de sus capacidades, te recomendamos explorar la documentación oficial de Pandas y realizar ejercicios prácticos en un entorno de desarrollo como Google Colab o Jupyter Notebook. La práctica constante y la experimentación te ayudarán a consolidar tus conocimientos y a adquirir habilidades avanzadas en el manejo de datos con Pandas.</p>
+				<hr>
+
+				<h2><b>Matplotlib: Librería de Visualización de Datos en Python</b></h2>
+				<p>Matplotlib es una biblioteca fundamental en Python para la creación de gráficos y visualización de datos. Utilizada ampliamente en ciencia de datos, investigación y análisis de datos, Matplotlib permite la generación de una amplia variedad de gráficos, desde simples gráficos de líneas hasta complejas visualizaciones en 2D y 3D.</p>
+				<div class="warning admonition">
+					<p class="admonition-w-title"><i class="fa fa-file-text"></i>Documentación de la librería</p>
+					<ul>
+						<p></p>
+						<p>Para aprovechar al máximo las capacidades de Matplotlib en la visualización de datos, te recomendamos visitar la <a href="https://matplotlib.org/stable/users/index.html#users-guide-index"><b>documentación oficial de Matplotlib</b></a>. Este recurso proporciona guías detalladas, tutoriales y ejemplos que te ayudarán a dominar la creación de gráficos y personalizaciones avanzadas, mejorando así tus habilidades en el análisis visual de datos.</p>
+					</ul>
+					<p></p> 
+				</div>
+				<h4><b>Características principales:</b></h4>
+				<ul>
+					<li>Ofrece una amplia variedad de gráficos y visualizaciones, incluyendo gráficos de líneas, barras, dispersión, cajas, histogramas y más.</li>	
+					<li>Proporciona herramientas para personalizar la apariencia de los gráficos, incluyendo colores, estilos, etiquetas y títulos.</li>
+					<li>Permite la creación de gráficos en 2D y 3D, así como la superposición de múltiples gráficos en una sola figura.</li>
+					<li>Es compatible con la exportación de gráficos en diversos formatos, como PNG, JPG, PDF y SVG.</li>
+					<li>Integra funcionalidades avanzadas para la visualización de datos en tiempo real, la animación y la interactividad.</li>
+				</ul>
+				<h4><b>Empezar a usar Matplotlib</b></h4>
+				<p>Para empezar a usar Matplotlib, primero debes importar el paquete. La comunidad generalmente utiliza el alias plt para Matplotlib, por lo que es una práctica común en toda la documentación de Matplotlib cargar el paquete con este alias.</p>
+				<pre><code id="imp_matplotlib"><span class="spcaracter">import</span> matplotlib.pyplot <span class="spcaracter">as</span> plt</code> 
+					<button class="copy-btn" data-clipboard-target="#imp_matplotlib">
+						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					  </button></pre>
+						<script>
+						// Inicializar resaltado de sintaxis
+						hljs.highlightAll();
+
+						// Inicializar botón de copiado
+						new ClipboardJS('.copy-btn');
+						</script>
+				<p>Una vez que hayas importado Matplotlib, puedes empezar a crear gráficos y visualizaciones de datos. A continuación, se presentan ejemplos prácticos de cómo crear diferentes tipos de gráficos en Matplotlib, desde gráficos de líneas y barras hasta gráficos de dispersión y cajas.</p>
+				<p><b>&emsp;&emsp;Ejemplo:</b></p>
+				<p>Utilizando los datos del DataFrame creado previamente en pandas, este ejemplo demostrará cómo visualizar los puntajes de varias personas mediante una gráfica de barras con Matplotlib. Esto te permitirá ver cómo combinar la manipulación de datos con pandas y la visualización de datos con Matplotlib de manera efectiva.</p>
 				
-				<h2>Librería Matplotlib</h2>
-				<p>In eleifend diam ipsum, a hendrerit sapien vehicula sed. Donec fermentum dolor in diam accumsan ultrices. Nullam interdum diam ut urna ullamcorper, ut vulputate mi tincidunt. Sed volutpat a nunc ut ultrices. Suspendisse tempor ornare nisi ac rhoncus. Quisque id tellus justo. In in quam sed lorem dignissim egestas. Vivamus est libero, tempus et pretium ac, ultricies ac augue. Quisque placerat vitae nisi eget facilisis. Quisque consectetur neque in ornare accumsan. Praesent at molestie nunc. Proin sollicitudin arcu posuere accumsan pretium. Maecenas tincidunt lorem arcu, vel semper justo congue et.</p>
+				<p><b><I>&emsp; Gráfico de Barras:</I></b></p>
+				<pre><code id="grafico_barras"><span class="comment"># Crear una gráfica de barras para visualizar los puntajes</span><br>plt.figure<span class="cuadrados_c">(</span>figsize=<span class="corchetes">(</span><span class="number">8</span>, <span class="number">6</span><span class="corchetes">)</span><span class="cuadrados_c">)</span><br>plt.bar<span class="cuadrados_c">(</span>df.index, df<span class="corchetes">[</span><span class="string">'Puntaje'</span><span class="corchetes">]</span>, color= <span class="string">'skyblue'</span><span class="cuadrados_c">)</span><br>plt.xlabel<span class="cuadrados_c">(</span><span class="string">'Personas'</span><span class="cuadrados_c">)</span><br>plt.ylabel<span class="cuadrados_c">(</span><span class="string">'Puntaje'</span><span class="cuadrados_c">)</span><br>plt.title<span class="cuadrados_c">(</span><span class="string">'Puntajes de las Personas'</span><span class="cuadrados_c">)</span><br>plt.ylim<span class="cuadrados_c">(</span><span class="number">70</span>, <span class="number">100</span><span class="cuadrados_c">)</span><br><br><span class="comment"># Mostrar los valores de puntaje encima de cada barra</span><br>plt.show<span class="cuadrados_c">()</span></code>  
+					<button class="copy-btn" data-clipboard-target="#grafico_barras">
+					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						</button></pre>
+							<script>
+							// Inicializar resaltado de sintaxis
+								hljs.highlightAll();
 
-				<p>Aliquam sollicitudin in nulla ut sagittis. Fusce feugiat, sapien eget rutrum ullamcorper, lectus dui dapibus felis, blandit sagittis libero mi eu velit. Cras venenatis, arcu et ornare pharetra, quam ante accumsan libero, ac condimentum felis velit quis lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sit amet urna est. Proin vulputate laoreet turpis ut pulvinar. Ut sollicitudin sem dui, vel elementum velit venenatis a. Fusce scelerisque tortor in augue consectetur lacinia. In at mattis mi.</p>
+							// Inicializar botón de copiado
+								new ClipboardJS('.copy-btn');
+							</script>
 
-				<blockquote>Venenatis, arcu et ornare pharetra, quam ante accumsan libero, ac condimentum felis velit quis lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sit amet urna est. Proin vulputate laoreet turpis ut pulvinar.</blockquote>
-				<p>Odit, laudantium, dolores, natus distinctio labore voluptates in inventore quasi qui nobis quis adipisci fugit id! Aliquam alias ea modi. Porro, odio, sed veniam hic numquam qui ad molestiae sint placeat expedita? Perferendis, enim qui numquam sequi obcaecati molestiae fugiat!</p>
-				<p>Dignissimos, beatae, praesentium illum eos autem perspiciatis? Minus, non, tempore, illo, mollitia exercitationem tempora quas harum odio dolores delectus quidem laudantium adipisci ducimus ullam placeat eaque minima quae iure itaque corporis magni nesciunt eius sed dolor doloremque id quasi nisi.</p>
-			
-			
+				<p>Al ejecutar el código en un entorno de desarrollo como Google Colab o Jupyter Notebook, obtendrás una gráfica de barras que muestra los puntajes de las personas en el DataFrame. Cada barra representa el puntaje de una persona, con los valores de puntaje mostrados encima de cada barra para facilitar la visualización de los datos.</p>	
+				<div style="text-align: center;">
+					<img  src="assets/images/graph_bar.png" >
+				</div>
+				<p></p>
+				<p>La combinación de pandas y Matplotlib te permite realizar análisis de datos completos y visualizaciones efectivas en Python. Al integrar estas dos librerías en tus proyectos de análisis de datos, podrás manipular, transformar y visualizar datos de manera eficiente, lo que te permitirá obtener información valiosa y tomar decisiones informadas basadas en tus análisis.</p>	
+				<p>Para profundizar en el uso de Matplotlib y adquirir habilidades avanzadas en la creación de gráficos y visualizaciones de datos, te recomendamos explorar la documentación oficial de Matplotlib y realizar ejercicios prácticos en un entorno de desarrollo como Google Colab o Jupyter Notebook. La práctica constante y la experimentación te ayudarán a dominar las capacidades de Matplotlib y a crear visualizaciones de datos impactantes para tus proyectos de análisis de datos.</p>
+			<hr>
+			<h2><b>Referencias</b></h2>
+			<p>&emsp; &emsp; Bernard, J. (2016). Python Data Analysis with pandas. In: Python Recipes Handbook. Apress, Berkeley, CA. <a href = 'https://doi.org/10.1007/978-1-4842-0241-8_5'><b>https://doi.org/10.1007/978-1-4842-0241-8_5</b></a></p>
+			<p>&emsp; &emsp; Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90–95. <a href='https://doi.org/10.1109/MCSE.2007.55'><b>https://doi.org/10.1109/MCSE.2007.55</b></a></p>
+			<p>&emsp; &emsp; McKinney, W. (2010). Data Structures for Statistical Computing in Python. In S. van der Walt & J. Millman (Eds.), Proceedings of the 9th Python in Science Conference (pp. 56–61). <a href = 'https://doi.org/10.25080/Majora-92bf1922-00a'><b>https://doi.org/10.25080/Majora-92bf1922-00a</b></a></p>
+			<p>&emsp; &emsp; McKinney, W. (2022). Python for data analysis: Data wrangling with Pandas, NumPy, and IPython. O'Reilly Media, Inc. <a href = 'https://wesmckinney.com/book/'> <b>https://wesmckinney.com/book/</b></a></p>
+			<p>&emsp; &emsp; Nelli, F. (2018). Python data analytics with Pandas, NumPy, and Matplotlib.<a href = 'https://doi.org/10.1007/978-1-4842-3913-1'><b>https://doi.org/10.1007/978-1-4842-3913-1</b></a></p>
+			<p>&emsp; &emsp; The pandas development team. (2020). pandas-dev/pandas: Pandas (Version latest) [Software]. Zenodo. <a href='https://doi.org/10.5281/zenodo.3509134'><b>https://doi.org/10.5281/zenodo.3509134</b></a></p>
+
 			
 			</article>
 			<!-- /Article -->
@@ -371,7 +503,7 @@
 						<h5><b> Material complementario </b></h5>
 						<p>Aquí se incluyen recursos adicionales, ejemplos prácticos y ejercicios que le ayudarán a consolidar los conceptos básicos y a adquirir una comprensión más profunda de las librerías de Python diseñadas para el análisis y visualización de datos.</p>
 						<hr>
-						<h5><b>Librería Pandas</b></h5>
+						<h5><b>Librería pandas</b> <a href="https://github.com/pandas-dev"><i class="fa fa-github fa-2"></i></a></h5>
 						<p>
 							<img src="assets/images/pandas.png" alt=""></p>
 							<ul class="list-unstyled list-spaces">
@@ -393,26 +525,22 @@
 										<span class="small text-muted">Se encuentra una introducción básica a la librería, limpieza de datos y gráficas. Este tutorial se encuentra en inglés; sin embargo, añadiendo a tu explorador la siguiente extensión podrás acceder al contenido en español: <a href='https://chromewebstore.google.com/detail/traductor-de-google/aapbdbdomjkkjkaonfhkkikfgjllcleb'> traductor de Google</a>.</span></li>
 								</ul>
 							<hr>
-						<h5><b>Librería Matplotlib</b></h5>
+						<h5><b>Librería Matplotlib</b> <a href="https://github.com/matplotlib"><i class="fa fa-github fa-2"></i></a></h5></h5>
 								<p>
 									<img src="assets/images/matplolib.png" alt=""></p>
 									<ul class="list-unstyled list-spaces">
-										<li><a href="https://pandas.pydata.org/docs/getting_started/index.html">Documentación oficial de Matplotlib</a><br>
-											<span class="small text-muted">Explora la documentación oficial de Pandas para obtener información detallada sobre las funciones y características de la librería.</span></li>
-										<li><a href="">Guía rápida de pandas o Cheat sheet (Español)</a><br>
-											<span class="small text-muted">Para profundizar en el uso de pandas y tener una referencia rápida de sus funciones y características.</span></li>
-										<li><a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">Guía rápida de pandas o Cheat sheet (Inglés)</a><br>
-											<span class="small text-muted">Para profundizar en el uso de pandas y tener una referencia rápida de sus funciones y características.</span></li>
-										<li><a href="https://youtu.be/HyU9t2QD_tw">Visualización de la estructura de un DataFrame</a><br>
-											<span class="small text-muted">Video tutorial: introducción a Pandas en Jupyter Notebook.</span></li>
-										<li><a href="https://youtu.be/JD-Xznh58cE">Selección y manejo de columnas en Pandas</a><br>
-											<span class="small text-muted">Video tutorial: explora las diferentes opciones que hay para la selección y manejo de columnas de un DataFrame.</span></li>
-										<li><a href="https://youtu.be/p0OCdjMLgjY?si=4tZo7WvP1rx4gJEv">Selección y manejo de filas en Pandas</a><br>
-											<span class="small text-muted">Video tutorial: explora las diferentes opciones que hay para la selección y manejo de filas de un DataFrame.</span></li>
-										<li><a href="https://youtu.be/DxG0pqJ5VHo?si=BHFWFfy-YRyJFhCN">Propiedades loc, iloc, at e iat.</a><br>
-											<span class="small text-muted">Video tutorial: aborda la obtención de subconjuntos de un DataFrame a partir de las propiedades loc, iloc, at e iat. </span></li>
-											<li><a href="https://www.w3schools.com/python/pandas/default.asp">Tutorial interactivo de Pandas</a><br>
-												<span class="small text-muted">Se encuentra una introducción básica a la librería, limpieza de datos y gráficas. Este tutorial se encuentra en inglés, pero con las siguientes extensiones podrás acceder al contenido en español:  google transalte </span></li>
+										<li><a href="https://matplotlib.org/stable/users/index.html#users-guide-index">Documentación oficial de Matplotlib</a><br>
+											<span class="small text-muted">Descubre todo lo que necesitas saber sobre Matplotlib en su documentación. Desde gráficos simples hasta visualizaciones complejas, aquí encontrarás todo lo necesario para sacar el máximo provecho de esta popular biblioteca de Python.</span></li>
+										<li><a href="https://matplotlib.org/cheatsheets/_images/handout-beginner.png">Guía rápida de Matplotlib o Cheat sheet para principiantes (Inglés)</a><br>
+											<span class="small text-muted">Esta útil herramienta ofrece una visión general rápida de los comandos y funciones clave de Matplotlib para que puedas crear visualizaciones impresionantes en Python de manera eficiente.</span></li>
+										<li><a href="https://matplotlib.org/cheatsheets/">Guías rápidas de Matplotlib o Cheats sheets (Inglés)</a><br>
+											<span class="small text-muted">En esta sección, encontrarás una variedad de guías diseñadas para satisfacer las necesidades de usuarios principiantes y avanzados por igual. Desde conceptos básicos como el manejo de colores y la alineación de texto, hasta una exploración detallada de la anatomía de una figura, estas guías están diseñadas para ayudarte a aprovechar al máximo tus visualizaciones en Matplotlib.</span></li>
+										<li><a href="https://youtu.be/HyU9t2QD_tw">Diseño de Gráficos Matplotlib</a><br>
+											<span class="small text-muted">Video tutorial: ejemplo de creación de un gráfico.</span></li>
+										<li><a href='https://youtu.be/QPaHUBphDgo'>Diversos gráficos en Matplotlib</a><br>
+											<span class="small text-muted">Video tutorial: explora la sintaxis de creación de gráficos lineales, gráfico de barras, gráficos de sectores, histogramas y diagramas de dispersión. </span></li>
+											<li><a href="https://www.w3schools.com/python/matplotlib_intro.asp">Tutorial interactivo de Matplotlib</a><br>
+												<span class="small text-muted">Se encuentra una introducción básica a la librería. Este tutorial está disponible en inglés, pero con las siguientes extensiones podrás acceder al contenido en español:  google transalte </span></li>
 										</ul>
 		
 					</div>
