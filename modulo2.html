@@ -84,6 +84,7 @@
 					<li>Exportación de gráficos.</li>
                   </ol>  
 				  <p></p>
+				<!--  
 				  <h4><b>Material para el desarrollo de la sesión:</b></h4>
                     <p>A continuación, encontrarás los enlaces a los notebooks de Google Colab que utilizaremos en la Sesión 2. Uno está dedicado a <b>pandas</b>, donde exploraremos estructuras de datos y manipulaciones básicas, y el otro se centra en <b>matplotlib</b>, para la creación y personalización de gráficos. Estos recursos te permitirán seguir de cerca los ejemplos y prácticas durante la sesión.</p>
 					
@@ -99,89 +100,7 @@
 				
 				  <hr> 
 				
-				<h4><b>¿Qué es una librería en Python?</b></h4>
-				<p>Una librería en Python es una colección de módulos que proporcionan funciones y métodos predefinidos que puedes utilizar para realizar tareas específicas sin tener que escribir todo el código desde cero. Las librerías te ayudan a reutilizar código y acelerar el desarrollo de tus programas. Por ejemplo, en lugar de escribir tu propio código para manejar datos en formato CSV, puedes usar una librería como pandas que ya tiene esta funcionalidad incorporada.</p>
-				<hr> 
-				<h4><b>Importar e instalar paquetes</b></h4>  
-				<p><I><b>Instalación de Paquetes en Python Local</b></I></p>
-				<p>Para instalar paquetes en un entorno local, se utiliza el gestor de paquetes pip. A continuación, se muestra cómo hacerlo desde la línea de comandos:</p>
-				<p></p>
-				<ol>
-                    <li>Abrir la terminal o el símbolo del sistema.</li>
-                    <li>Ejecutar el comando de instalación:</li>
-                  </ol>  
-				<pre><code id="pip_install"><span class="spcaracter"></span>pip install nombre_del_paquete</code>
-					<button class="copy-btn" data-clipboard-target="#pip_install">
-						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
-					  </button></pre>
-						<script>
-						// Inicializar resaltado de sintaxis
-						hljs.highlightAll();
-
-						// Inicializar botón de copiado
-						new ClipboardJS('.copy-btn');
-						</script>
-				<p>Por ejemplo, para instalar pandas, ejecutarías:</p>
-				<pre><code id="pip_pandas"><span class="spcaracter"></span>pip install pandas</code>
-					<button class="copy-btn" data-clipboard-target="#pip_pandas">
-						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
-					  </button></pre>
-						<script>
-						// Inicializar resaltado de sintaxis
-						hljs.highlightAll();
-
-						// Inicializar botón de copiado
-						new ClipboardJS('.copy-btn');
-						</script>
-				<ol start="3">
-                    <li>Verificar la instalación: Puedes verificar si el paquete se instaló correctamente intentando importarlo en un script de Python</li>
-                  </ol> 	
-				  <pre><code id="verificar_pip"><span class="spcaracter">import</span> pandas <span class="spcaracter">as</span> pd  <br><span class="string">print</span>(pd.__version__)</code> 
-					<button class="copy-btn" data-clipboard-target="#verificar_pip">
-						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
-					  </button></pre>
-						<script>
-						// Inicializar resaltado de sintaxis
-						hljs.highlightAll();
-
-						// Inicializar botón de copiado
-						new ClipboardJS('.copy-btn');
-						</script>				
 				
-				
-				<p><I><b>Instalación de Paquetes en Google Colab</b></I></p>
-				<div class="note admonition">
-					<p class="admonition-note-title"><i class="fa fa-comments-o" aria-hidden="true"></i>Recuerda</p>
-					<p></p>
-					<p>En Google Colab, encontrarás una variedad de bibliotecas de Python preinstaladas, desde las fundamentales como NumPy y Pandas hasta las especializadas como TensorFlow y Matplotlib. Esta preinstalación tiene como objetivo principal simplificar el proceso de inicio y facilitar el trabajo en proyectos de análisis de datos, aprendizaje automático y otros campos de la ciencia de datos.</p>
-			    </div>
-				<p></p> 
-				<p>Para verificar si una librería está preinstalada en Google Colab:</p>
-				<pre><code id="pip_colab"><span class="spcaracter">!</span>pip show nombre_del_paquete </code> 
-					<button class="copy-btn" data-clipboard-target="#pip_colab">
-						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
-					  </button></pre>
-						<script>
-						// Inicializar resaltado de sintaxis
-						hljs.highlightAll();
-
-						// Inicializar botón de copiado
-						new ClipboardJS('.copy-btn');
-						</script>
-				<p>Para instalar paquetes en Google Colab, se utiliza el gestor de paquetes pip. A continuación, se muestra cómo hacerlo desde una celda de código:</p>
-				<pre><code id="git_clone"><span class="spcaracter">!</span>pip install nombre_del_paquete </code> 
-					<button class="copy-btn" data-clipboard-target="#git_clone">
-						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
-					  </button></pre>
-						<script>
-						// Inicializar resaltado de sintaxis
-						hljs.highlightAll();
-
-						// Inicializar botón de copiado
-						new ClipboardJS('.copy-btn');
-						</script>
-				<hr>
-
 				<h2><b>pandas: herramienta esencial para el análisis de datos en Python</b></h2>
 				<p>pandas es una biblioteca fundamental en Python, diseñada específicamente para la manipulación y el análisis de datos. Es utilizada ampliamente en la ciencia de datos, la ingeniería de datos y el análisis estadístico, gracias a su capacidad para manejar grandes volúmenes de datos de manera eficiente y su sintaxis intuitiva.</p>
 				<div class="warning admonition">
@@ -207,7 +126,7 @@
 				<p>Para empezar a usar pandas, primero debes importar el paquete. La comunidad generalmente utiliza el alias pd para pandas, por lo que es una práctica común en toda la documentación de pandas cargar el paquete con este alias.</p>
 				<pre><code id="imp_pandas"><span class="spcaracter">import</span> pandas <span class="spcaracter">as</span> pd</code> 
 					<button class="copy-btn" data-clipboard-target="#imp_pandas">
-						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						<i class="fa fa-files-o" aria-hidden="true"></i> 
 					  </button></pre>
 						<script>
 						// Inicializar resaltado de sintaxis
@@ -242,7 +161,7 @@
 				<p><b><I>&emsp; 1. Series de números enteros:</I></b></p>
 				<pre><code id="ejemplo_serie_pd"><span class="comment"># Crear un objeto "Series" de números enteros</span><br>serie_edades = pd.Series<span class="cuadrados_c">(</span><span class="corchetes">[</span><span class="number">23</span>, <span class="number">35</span>, <span class="number">22</span>, <span class="number">28</span><span class="corchetes">]</span></span>, index = <span class="corchetes">[</span><span class="string">'Ana'</span>, <span class="string">'Juan'</span>, <span class="string">'Pedro'</span>, <span class="string">'María'</span><span class="corchetes">]</span><span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>serie_edades<span class="cuadrados_c">)</span></code> 
 					<button class="copy-btn" data-clipboard-target="#ejemplo_serie_pd">
-						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						<i class="fa fa-files-o" aria-hidden="true"></i> 
 					  </button></pre>
 						<script>
 						// Inicializar resaltado de sintaxis
@@ -254,7 +173,7 @@
 				<p><b><I>&emsp; 2. Series de cadenas de texto:</I></b></p>
 				<pre><code id="ejemplo_serie2_pd"><span class="comment"># Crear un objeto "Series" de cadenas de texto</span><br>serie_ciudades = pd.Series<span class="cuadrados_c">(</span><span class="corchetes">[</span><span class="string">'Bogotá'</span>, <span class="string">'Cali'</span>, <span class="string">'Medellín'</span>, <span class="string">'Tunja'</span><span class="corchetes">]</span></span>, index = <span class="corchetes">[</span><span class="string">'Ana'</span>, <span class="string">'Juan'</span>, <span class="string">'Pedro'</span>, <span class="string">'María'</span><span class="corchetes">]</span><span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>serie_ciudades<span class="cuadrados_c">)</span></code> 
 					<button class="copy-btn" data-clipboard-target="#ejemplo_serie2_pd">
-						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						<i class="fa fa-files-o" aria-hidden="true"></i> 
 					  </button></pre>
 						<script>
 						// Inicializar resaltado de sintaxis
@@ -266,7 +185,7 @@
 				<p><b><I>&emsp; 3. Series de números decimales:</I></b></p>
 				<pre><code id="ejemplo_serie3_pd"><span class="comment"># Crear un objeto "Series" de números flotantes</span><br>serie_puntajes = pd.Series<span class="cuadrados_c">(</span><span class="corchetes">[</span><span class="number">85.5</span>, <span class="number">92.3</span>, <span class="number">76.8</span>, <span class="number">88.1</span><span class="corchetes">]</span></span>, index = <span class="corchetes">[</span><span class="string">'Ana'</span>, <span class="string">'Juan'</span>, <span class="string">'Pedro'</span>, <span class="string">'María'</span><span class="corchetes">]</span><span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>serie_puntajes<span class="cuadrados_c">)</span></code> 
 					<button class="copy-btn" data-clipboard-target="#ejemplo_serie3_pd">
-					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					<i class="fa fa-files-o" aria-hidden="true"></i> 
 						 </button></pre>
 							<script>
 							// Inicializar resaltado de sintaxis
@@ -279,7 +198,7 @@
 				<p>A continuación, combinamos las Series anteriores para crear un DataFrame:</p>
 				<pre><code id="ejemplo_df_pd"><span class="comment"># Crear un DataFrame a partir de "Series"</span><br>data = <span class="cuadrados_c">{</span><span class="string">'Edad'</span>: serie_edades, <span class="string">'Ciudad'</span>: serie_ciudades, <span class="string">'Puntaje'</span>: serie_puntajes<span class="cuadrados_c">}</span><br>df = pd.DataFrame<span class="cuadrados_c">(</span>data<span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>df<span class="cuadrados_c">)</span></code> 
 					<button class="copy-btn" data-clipboard-target="#ejemplo_df_pd">
-					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					<i class="fa fa-files-o" aria-hidden="true"></i> 
 						</button></pre>
 							<script>
 							// Inicializar resaltado de sintaxis
@@ -315,7 +234,7 @@
 				</ul>
 				<pre><code id="ejemplo_fil_80"><span class="comment"># Personas con puntaje mayor a 80</span><br>filtro_puntaje = df<span class="cuadrados_c">[</span>df<span class="corchetes">[</span><span class="string">'Puntaje'</span></span><span class="corchetes">]</span> > </span><span class="number">80</span></span><span class="cuadrados_c">]</span><br><span class="print">print</span><span class="cuadrados_c">(</span>filtro_puntaje<span class="cuadrados_c">)</span></code> 
 					<button class="copy-btn" data-clipboard-target="#ejemplo_fil_80">
-					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					<i class="fa fa-files-o" aria-hidden="true"></i> 
 						</button></pre>
 							<script>
 							// Inicializar resaltado de sintaxis
@@ -331,7 +250,7 @@
 				<p>&emsp;&emsp;<b>iloc:</b> es útil cuando se trabaja con posiciones y índices numéricos.</p>
 				<pre><code id="ejemplo_df_iloc"><span class="comment"># Seleccionar la información de Juan usando iloc</span><br>juan_info_iloc = df.iloc<span class="cuadrados_c">[</span>1<span class="cuadrados_c">]</span><br><span class="print">print</span><span class="cuadrados_c">(</span>juan_info_iloc <span class="cuadrados_c">)</span></code> 
 					<button class="copy-btn" data-clipboard-target="#ejemplo_df_iloc">
-					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					<i class="fa fa-files-o" aria-hidden="true"></i> 
 						</button></pre>
 							<script>
 							// Inicializar resaltado de sintaxis
@@ -343,7 +262,7 @@
 				<p>&emsp;&emsp;<b>loc:</b> es más intuitivo cuando se trabaja con etiquetas y nombres.</p>
 				<pre><code id="ejemplo_df_loc"><span class="comment"># Seleccionar la información de Juan usando loc</span><br>juan_info_loc = df.loc<span class="cuadrados_c">[</span><span class="string">'Juan'</span><span class="cuadrados_c">]</span><br><span class="print">print</span><span class="cuadrados_c">(</span>juan_info_loc<span class="cuadrados_c">)</span></code> 
 					<button class="copy-btn" data-clipboard-target="#ejemplo_df_loc">
-					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					<i class="fa fa-files-o" aria-hidden="true"></i> 
 						</button></pre>
 							<script>
 							// Inicializar resaltado de sintaxis
@@ -358,7 +277,7 @@
 				</ul>
 				<pre><code id="ejemplo_agr_pd"><span class="comment"># Puntaje promedio por ciudad</span><br>agrupamiento_ciudad = df.groupby<span class="cuadrados_c">(</span><span class="string">'Ciudad'</span><span class="cuadrados_c">)</span><span class="corchetes">[</span><span class="string">'Puntaje'</span></span><span class="corchetes">]</span>.mean<span class="cuadrados_c">()</span><br><span class="print">print</span><span class="cuadrados_c">(</span>agrupamiento_ciudad<span class="cuadrados_c">)</span></code> 
 					<button class="copy-btn" data-clipboard-target="#ejemplo_agr_pd">
-					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					<i class="fa fa-files-o" aria-hidden="true"></i> 
 						</button></pre>
 							<script>
 							// Inicializar resaltado de sintaxis
@@ -374,7 +293,7 @@
 				</ul>
 				<pre><code id="ejemplo_trans_1"><span class="comment"># Nueva columna 'Puntaje_Ajustado' con incremento de 5 puntos</span><br>df<span class="cuadrados_c">[</span><span class="string">'Puntaje_Ajustado'</span><span class="cuadrados_c">]</span> = df<span class="cuadrados_c">[</span><span class="string">'Puntaje'</span></span><span class="corchetes">]</span>.apply<span class="cuadrados_c">(</span><span class="spcaracter">lambda</span> x: x + <span class="number">5</span><span class="cuadrados_c">)</span><br><span class="print">print</span><span class="cuadrados_c">(</span>df<span class="cuadrados_c">)</span></code> 
 					<button class="copy-btn" data-clipboard-target="#ejemplo_trans_1">
-					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					<i class="fa fa-files-o" aria-hidden="true"></i> 
 						</button></pre>
 							<script>
 							// Inicializar resaltado de sintaxis
@@ -448,7 +367,7 @@
 				<p>Para empezar a usar Matplotlib, primero debes importar el paquete. La comunidad generalmente utiliza el alias plt para Matplotlib, por lo que es una práctica común en toda la documentación de Matplotlib cargar el paquete con este alias.</p>
 				<pre><code id="imp_matplotlib"><span class="spcaracter">import</span> matplotlib.pyplot <span class="spcaracter">as</span> plt</code> 
 					<button class="copy-btn" data-clipboard-target="#imp_matplotlib">
-						<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+						<i class="fa fa-files-o" aria-hidden="true"></i> 
 					  </button></pre>
 						<script>
 						// Inicializar resaltado de sintaxis
@@ -464,7 +383,7 @@
 				<p><b><I>&emsp; Gráfico de Barras:</I></b></p>
 				<pre><code id="grafico_barras"><span class="comment"># Crear una gráfica de barras para visualizar los puntajes</span><br>plt.figure<span class="cuadrados_c">(</span>figsize=<span class="corchetes">(</span><span class="number">8</span>, <span class="number">6</span><span class="corchetes">)</span><span class="cuadrados_c">)</span><br>plt.bar<span class="cuadrados_c">(</span>df.index, df<span class="corchetes">[</span><span class="string">'Puntaje'</span><span class="corchetes">]</span>, color= <span class="string">'skyblue'</span><span class="cuadrados_c">)</span><br>plt.xlabel<span class="cuadrados_c">(</span><span class="string">'Personas'</span><span class="cuadrados_c">)</span><br>plt.ylabel<span class="cuadrados_c">(</span><span class="string">'Puntaje'</span><span class="cuadrados_c">)</span><br>plt.title<span class="cuadrados_c">(</span><span class="string">'Puntajes de las Personas'</span><span class="cuadrados_c">)</span><br>plt.ylim<span class="cuadrados_c">(</span><span class="number">70</span>, <span class="number">100</span><span class="cuadrados_c">)</span><br><br><span class="comment"># Mostrar los valores de puntaje encima de cada barra</span><br>plt.show<span class="cuadrados_c">()</span></code>  
 					<button class="copy-btn" data-clipboard-target="#grafico_barras">
-					<i class="fa fa-files-o" aria-hidden="true"></i> <!-- Icono de copiar de Font Awesome -->
+					<i class="fa fa-files-o" aria-hidden="true"></i> 
 						</button></pre>
 							<script>
 							// Inicializar resaltado de sintaxis
@@ -489,8 +408,8 @@
 			<p>&emsp; &emsp; McKinney, W. (2022). Python for data analysis: Data wrangling with Pandas, NumPy, and IPython. O'Reilly Media, Inc. <a href = 'https://wesmckinney.com/book/'> <b>https://wesmckinney.com/book/</b></a></p>
 			<p>&emsp; &emsp; Nelli, F. (2018). Python data analytics with Pandas, NumPy, and Matplotlib.<a href = 'https://doi.org/10.1007/978-1-4842-3913-1'><b>https://doi.org/10.1007/978-1-4842-3913-1</b></a></p>
 			<p>&emsp; &emsp; The pandas development team. (2020). pandas-dev/pandas: Pandas (Version latest) [Software]. Zenodo. <a href='https://doi.org/10.5281/zenodo.3509134'><b>https://doi.org/10.5281/zenodo.3509134</b></a></p>
-
-			
+			-->
+		
 			</article>
 			<!-- /Article -->
 
