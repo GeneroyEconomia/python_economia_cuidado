@@ -21,7 +21,7 @@ El curso se divide en tres módulos:
 
 ## Estructura del Repositorio
 El repositorio está organizado en tres carpetas principales, una para cada módulo del curso. Cada carpeta de módulo contiene dos subcarpetas: una de códigos y otra de material adicional.
-- **codes**: Esta carpeta contiene los scripts y notebooks de Python utilizados en cada módulo.
+- **code**: Esta carpeta contiene los scripts y notebooks de Python utilizados en cada módulo.
 - **material**: Esta carpeta contiene materiales adicionales como lecturas, diapositivas y recursos complementarios.
 
 <div align="justify">
