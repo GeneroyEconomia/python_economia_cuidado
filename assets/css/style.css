@@ -861,3 +861,13 @@ pre {
 .admonition-note-title i {
     margin-right: 10px; /* Ajusta el margen derecho del icono según tu preferencia */
   }
+
+  figure {
+    display: inline-block;
+    margin: 20px;
+}
+figcaption {
+    text-align: center;
+    font-style: italic;
+    color: gray;
+}
